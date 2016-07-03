@@ -8,10 +8,13 @@ import org.aopalliance.intercept.MethodInterceptor;
  */
 public class AdvisedSupport {
 
+	//原始对象的实例，类的Class和接口
 	private TargetSource targetSource;
 
+	//方法拦截器
     private MethodInterceptor methodInterceptor;
 
+    //方法匹配器？拦截那些方法，这个就是去找那些方法的。
     private MethodMatcher methodMatcher;
 
     public TargetSource getTargetSource() {

@@ -5,6 +5,11 @@ import org.aopalliance.aop.Advice;
 /**
  * @author yihua.huang@dianping.com
  */
+/**
+ * 切点通知方法？未知
+ * @author tengyu
+ *
+ */
 public class AspectJExpressionPointcutAdvisor implements PointcutAdvisor {
 
     private AspectJExpressionPointcut pointcut = new AspectJExpressionPointcut();

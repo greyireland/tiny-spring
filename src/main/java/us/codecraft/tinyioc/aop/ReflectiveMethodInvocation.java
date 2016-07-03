@@ -8,8 +8,14 @@ import java.lang.reflect.Method;
 /**
  * @author yihua.huang@dianping.com
  */
+/**
+ * 方法调用
+ * @author tengyu
+ *
+ */
 public class ReflectiveMethodInvocation implements MethodInvocation {
 
+	//目标对象
 	protected Object target;
 
     protected Method method;
@@ -34,6 +40,8 @@ public class ReflectiveMethodInvocation implements MethodInvocation {
 
 	@Override
 	public Object proceed() throws Throwable {
+		//对象的方法调用（参数）
+		//p.say("hello");和方法调用一样，只是采用反射的方式
 		return method.invoke(target, arguments);
 	}
 

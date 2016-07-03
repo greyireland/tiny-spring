@@ -10,6 +10,11 @@ import java.lang.reflect.Method;
 /**
  * @author yihua.huang@dianping.com
  */
+/**
+ * 环绕通知事件
+ * @author tengyu
+ *
+ */
 public class AspectJAroundAdvice implements Advice, MethodInterceptor {
 
 	private BeanFactory beanFactory;

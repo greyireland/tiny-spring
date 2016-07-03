@@ -10,6 +10,7 @@ import java.util.List;
 /**
  * @author yihua.huang@dianping.com
  */
+//?未知
 public class AspectJAwareAdvisorAutoProxyCreator implements BeanPostProcessor, BeanFactoryAware {
 
 	private AbstractBeanFactory beanFactory;

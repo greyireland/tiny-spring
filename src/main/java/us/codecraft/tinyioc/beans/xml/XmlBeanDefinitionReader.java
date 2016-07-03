@@ -25,11 +25,13 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
 
 	@Override
 	public void loadBeanDefinitions(String location) throws Exception {
+		//加载输入流
 		InputStream inputStream = getResourceLoader().getResource(location).getInputStream();
 		doLoadBeanDefinitions(inputStream);
 	}
 
 	protected void doLoadBeanDefinitions(InputStream inputStream) throws Exception {
+		//xml解析
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder docBuilder = factory.newDocumentBuilder();
 		Document doc = docBuilder.parse(inputStream);
@@ -56,14 +58,18 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
 	}
 
 	protected void processBeanDefinition(Element ele) {
+		//获取id和classname
 		String name = ele.getAttribute("id");
 		String className = ele.getAttribute("class");
 		BeanDefinition beanDefinition = new BeanDefinition();
+		//处理属性
 		processProperty(ele, beanDefinition);
+		//注册Class
 		beanDefinition.setBeanClassName(className);
 		getRegistry().put(name, beanDefinition);
 	}
 
+	//添加bean的属性，和ref引用
 	private void processProperty(Element ele, BeanDefinition beanDefinition) {
 		NodeList propertyNode = ele.getElementsByTagName("property");
 		for (int i = 0; i < propertyNode.getLength(); i++) {
@@ -80,6 +86,7 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
 						throw new IllegalArgumentException("Configuration problem: <property> element for property '"
 								+ name + "' must specify a ref or value");
 					}
+					//bean对其他对象的引用，直接放到自己的属性里面
 					BeanReference beanReference = new BeanReference(ref);
 					beanDefinition.getPropertyValues().addPropertyValue(new PropertyValue(name, beanReference));
 				}

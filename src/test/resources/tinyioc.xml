@@ -16,6 +16,7 @@
         <property name="outputService" ref="outputService"></property>
     </bean>
 
+	<!-- 这个东西是干嘛的？ -->
     <bean id="autoProxyCreator" class="us.codecraft.tinyioc.aop.AspectJAwareAdvisorAutoProxyCreator"></bean>
 
     <bean id="timeInterceptor" class="us.codecraft.tinyioc.aop.TimerInterceptor"></bean>

@@ -12,6 +12,11 @@ import java.util.Set;
 /**
  * @author yihua.huang@dianping.com
  */
+/**
+ * 切点表达式，调用aspectj的类库，匹配要拦截方法
+ * @author tengyu
+ *
+ */
 public class AspectJExpressionPointcut implements Pointcut, ClassFilter, MethodMatcher {
 
 	private PointcutParser pointcutParser;

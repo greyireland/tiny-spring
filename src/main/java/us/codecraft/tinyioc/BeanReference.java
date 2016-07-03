@@ -4,7 +4,7 @@ package us.codecraft.tinyioc;
  * @author yihua.huang@dianping.com
  */
 /**
- * 保存引用
+ * 保存引用，bean的引用
  * @author tengyu
  *
  */

@@ -1,7 +1,7 @@
 package us.codecraft.tinyioc.beans;
 
 /**
- * 用于bean的属性注入
+ * 用于bean的属性注入，配置属性？
  * @author yihua.huang@dianping.com
  */
 public class PropertyValue {

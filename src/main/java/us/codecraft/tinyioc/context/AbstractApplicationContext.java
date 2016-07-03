@@ -16,7 +16,9 @@ public abstract class AbstractApplicationContext implements ApplicationContext {
 	}
 
 	public void refresh() throws Exception {
+		//加载bean
 		loadBeanDefinitions(beanFactory);
+		//注册之前，干点什么事情
 		registerBeanPostProcessors(beanFactory);
 		onRefresh();
 	}
@@ -34,6 +36,7 @@ public abstract class AbstractApplicationContext implements ApplicationContext {
         beanFactory.preInstantiateSingletons();
     }
 
+	//调用beanfactory工厂获取bean的实例对象
 	@Override
 	public Object getBean(String name) throws Exception {
 		return beanFactory.getBean(name);

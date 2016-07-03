@@ -17,6 +17,7 @@ public class UrlResource implements Resource {
     }
 
     @Override
+    //根据URL载入输入流
     public InputStream getInputStream() throws IOException{
         URLConnection urlConnection = url.openConnection();
         urlConnection.connect();
